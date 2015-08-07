@@ -1,6 +1,8 @@
-test:
-  pre:
+dependencies:
+  override:
     - pkg/depends.sh
+    - pkg/build.sh
+test:
   post:
     - pkg/package.sh
 general:
@@ -8,6 +10,6 @@ general:
     - pkg/artifacts
 deployment:
   production:
-    branch: master
+    branch: circleci
     commands:
       - pkg/deploy.sh

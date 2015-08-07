@@ -3,3 +3,4 @@ raintank-metric
 raintank-metric_*
 *.deb
 *.rpm
+pkg/build
