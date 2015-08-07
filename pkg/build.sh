@@ -17,6 +17,10 @@ mkdir -p ${BUILD_DIR}
 mkdir -p ${BUILD_DIR}/etc
 mkdir -p ${METRIC_BUILD_DIR}
 
-GOBIN=${METRIC_BUILD_DIR} go get -u github.com/raintank/raintank-metric
+export GOBIN=${METRIC_BUILD_DIR}
+
+cd ${DIR}/..
+go get -t -d -v ./...
+go build -v -o ${METRIC_BUILD_DIR}/raintank-metric
 
 cp -fR ${DIR}/config/ubuntu/trusty/etc/raintank ${BUILD_DIR}/etc/
